@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Base typography for better readability --- */
+body {
+  font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Light theme soft background */
+.light {
+  background-color: #f8fafc;
+  /* Off-white */
+  color: #1e293b;
+  /* Slate-800 for clarity */
+}
+
+/* Dark theme remains modern */
+.dark {
+  background-color: #0b0f19;
+  color: #f3f4f6;
+}
+
+/* Card base styles */
+.card {
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+  letter-spacing: -0.01em;
+}
+
+/* Subtle text */
+.text-muted {
+  color: #64748b;
+  /* slate-500 */
+}
+
+/* 🌙 Fix React DatePicker for Dark Mode */
+.react-datepicker {
+  background-color: #1e2533 !important;
+  color: #ffffff !important;
+  border: 1px solid #374151 !important;
+}
+
+.react-datepicker__header {
+  background-color: #2a3142 !important;
+  border-bottom: 1px solid #374151 !important;
+  color: #ffffff !important;
+}
+
+.react-datepicker__current-month,
+.react-datepicker-time__header,
+.react-datepicker-year-header {
+  color: #ffffff !important;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+  color: #e5e7eb !important;
+}
+
+.react-datepicker__day--disabled {
+  color: #6b7280 !important;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+
+.react-datepicker__day:hover {
+  background-color: #2563eb !important;
+  color: white !important;
+}
+
+.react-datepicker__month-dropdown,
+.react-datepicker__year-dropdown {
+  background-color: #1e2533 !important;
+  color: white !important;
+  border: 1px solid #374151 !important;
+}
+
+.react-datepicker__triangle {
+  display: none;
+}
+
+/* 🌙 Month & Year dropdown fix for Dark Mode */
+.react-datepicker__month-select,
+.react-datepicker__year-select {
+  background-color: #1e2533 !important;
+  color: #ffffff !important;
+  border: 1px solid #374151 !important;
+  border-radius: 6px !important;
+  padding: 4px 6px !important;
+  outline: none !important;
+}
+
+.react-datepicker__month-select:focus,
+.react-datepicker__year-select:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 1px #3b82f6 !important;
+}
+
+/* Hover style for dropdown options (may vary by browser) */
+.react-datepicker__month-select option,
+.react-datepicker__year-select option {
+  background-color: #1e2533 !important;
+  color: #ffffff !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Copy all the dark styles here */
+}
+
+/* 🌞 Light Mode Styles */
+.light .react-datepicker {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+.light .react-datepicker__header {
+  background-color: #f3f4f6 !important;
+  color: #111827 !important;
+}
+
+.light .react-datepicker__day,
+.light .react-datepicker__day-name {
+  color: #1f2937 !important;
+}
+
+.light .react-datepicker__day--selected,
+.light .react-datepicker__day--keyboard-selected {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+}
+
+.light .react-datepicker__month-select,
+.light .react-datepicker__year-select {
+  background-color: #ffffff !important;
+  color: #1f2937 !important;
+  border: 1px solid #d1d5db !important;
+}
+
+/* 🌙 Dark Mode Styles */
+.dark .react-datepicker {
+  background-color: #1e2533 !important;
+  color: #ffffff !important;
+  border: 1px solid #374151 !important;
+}
+
+.dark .react-datepicker__header {
+  background-color: #2a3142 !important;
+  border-bottom: 1px solid #374151 !important;
+  color: #ffffff !important;
+}
+
+.dark .react-datepicker__current-month,
+.dark .react-datepicker__day-name,
+.dark .react-datepicker__day {
+  color: #e5e7eb !important;
+}
+
+.dark .react-datepicker__day--disabled {
+  color: #6b7280 !important;
+}
+
+.dark .react-datepicker__day--selected,
+.dark .react-datepicker__day--keyboard-selected {
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+
+.dark .react-datepicker__month-select,
+.dark .react-datepicker__year-select {
+  background-color: #1e2533 !important;
+  color: #ffffff !important;
+  border: 1px solid #374151 !important;
+  border-radius: 6px !important;
+  padding: 4px 6px !important;
+}
+
+html {
+  font-size: 14px;
+  /* default is 16px */
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    background-color: transparent;
+  }
+
+  50% {
+    background-color: rgba(255, 230, 0, 0.4);
+    /* yellow glow */
+  }
+}
+
+.animate-blink {
+  animation: blink 0.7s ease-in-out;
+}
+
+/* 💥 Flash when stock is clicked */
+@keyframes flashPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0px rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 150, 0.1);
+  }
+
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 25px rgba(255, 230, 0, 0.7);
+    background-color: rgba(255, 255, 180, 0.3);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0px rgba(255, 255, 255, 0);
+    background-color: transparent;
+  }
+}
+
+.animate-flash {
+  animation: flashPulse 0.7s ease-in-out;
+}
+
+/* 💡 Persistent pulsing glow for selected card */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 0px rgba(0, 136, 255, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(0, 136, 255, 0.8);
+  }
+
+  100% {
+    box-shadow: 0 0 0px rgba(0, 136, 255, 0);
+  }
+}
+
+.glow-selected {
+  animation: glowPulse 2.2s ease-in-out infinite;
+  border: 2px solid rgba(0, 136, 255, 0.8);
+}
+
+@keyframes flash {
+  0% {
+    background-color: rgba(0, 255, 0, 0.1);
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
+.animate-flash {
+  animation: flash 0.6s ease-in-out;
+}
+
+.glow-selected {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
